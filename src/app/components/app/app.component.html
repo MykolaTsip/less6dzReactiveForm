@@ -1,0 +1,88 @@
+<!--&lt;!&ndash;1&ndash;&gt;-->
+<!--<form [formGroup]="myForm">-->
+<!--  <input type="text" [formControl]="email">-->
+<!--  <div></div>-->
+<!--  <input type="text" formControlName="password">-->
+<!--  <div>-->
+<!--  </div>-->
+<!--<button (click)="show(myForm)">-->
+<!--showww-->
+<!--</button>-->
+<!--</form>-->
+
+
+
+<!--&lt;!&ndash;2&ndash;&gt;-->
+<!--<form [formGroup]="myForm">-->
+<!--  <input type="text" formControlName="email">-->
+<!--  <div></div>-->
+<!--  <input type="text" formControlName="password">-->
+<!--  <div *ngIf="myForm.invalid">-->
+<!--    Error-->
+<!--  </div>-->
+<!--  <button (click)="show(myForm)" [disabled]="myForm.invalid">-->
+<!--    showww-->
+<!--  </button>-->
+<!--</form>-->
+
+
+
+<!--&lt;!&ndash;3&ndash;&gt;-->
+<!--<form [formGroup]="myForm" >-->
+<!--  <input type="text" formControlName="email">-->
+<!--  <div>-->
+<!--  </div>-->
+<!--  <input type="text" formControlName="password">-->
+<!--  <div><div *ngIf="myForm.invalid">ERROR</div></div>-->
+
+<!--<button (click)="show(myForm)">show form</button>-->
+<!--</form>-->
+
+
+<!--&lt;!&ndash;4&ndash;&gt;-->
+<!--<form [formGroup]="myForm">-->
+<!--  <input type="text" formControlName="email">-->
+<!--  <div *ngIf="myForm.controls.email.invalid">-->
+<!--    This line invalid-->
+<!--  </div>-->
+<!--  <br>-->
+<!--  <input type="text" formControlName="password">-->
+<!--  <div *ngIf="myForm.controls.password.invalid">-->
+<!--    This line invalid-->
+<!--  </div>-->
+<!--  <br>-->
+<!--  <input type="text" formControlName="confirmPass">-->
+<!--  <div *ngIf="myForm.controls.confirmPass.touched && myForm.hasError('errConfPass')">-->
+<!--    bad confirm pass-->
+<!--  </div>-->
+<!--  <br>-->
+<!--  <button  (click)="show(myForm)" [disabled]="myForm.invalid || myForm.hasError('errConfPass')">show results</button>-->
+<!--</form>-->
+
+
+
+<!--5-->
+
+<form [formGroup]="registForm">
+  <input type="text" formControlName="login"  placeholder="login">
+  <div *ngIf="registForm.hasError('lessFive') && registForm.controls.login.touched">
+LESS 5
+  </div>
+  <div *ngIf="registForm.hasError('moreTen') ">
+    MORE 10
+  </div>
+  <br>
+
+  <input type="text"  formControlName="pass" placeholder="password">
+  <div></div>
+  <br>
+
+  <input type="text" formControlName="confirmPass" placeholder="return password">
+  <div *ngIf="registForm.hasError('passErr') && registForm.controls.confirmPass.touched">
+    BAD CONFIRM PASSWORD
+  </div>
+  <br>
+
+
+  <button (click)="registData(registForm)">regist user</button>
+</form>
